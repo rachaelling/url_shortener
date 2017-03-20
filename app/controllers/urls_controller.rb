@@ -28,6 +28,12 @@ def destroy
   redirect_to urls_path
 end
 
+def short
+  url = Url.find(params[:id])
+  redirect_to url.long_url
+end
+
+
 # private method that only permits long_url to be exposed
 private
 def url_params
